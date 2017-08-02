@@ -28,9 +28,9 @@ module.exports = (
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
      {/* If user selects Info or Chat show the appropriate component */}
-      {/* <Route path="Search" component={Search} />  */}
+      <Route path="Search" component={Search} />  
       <Route path="Saved" component={Saved} />
-      <IndexRoute component={Saved} />
+      <IndexRoute component={Search} />
     </Route>
     
   </Router>
