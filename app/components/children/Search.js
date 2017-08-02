@@ -20,15 +20,15 @@ var Search = React.createClass({
                     <div className="panel-body">
                         <form>
                             <div className="form-group">
-                                <label for="topic">Topic</label>
+                                <label htmlFor="topic">Topic</label>
                                 <input type="email" className="form-control" id="newsTopic" placeholder="Enter News Topic" />
                             </div>
                             <div className="form-group">
-                                <label for="start-year">Start Year</label>
+                                <label htmlFor="start-year">Start Year</label>
                                 <input type="text" className="form-control" id="startYear" placeholder="Start Year" />
                             </div>
                             <div className="form-group">
-                                <label for="end-year">End Year</label>
+                                <label htmlFor="end-year">End Year</label>
                                 <input type="text" className="form-control" id="endYear" placeholder="End Year" />
                             </div>
                             <button type="submit" className="btn btn-default">Submit</button>
