@@ -12,21 +12,23 @@ class Search extends React.Component {
    
   // Here we set a generic state associated with the text being searched for
     getInitialState() {
-        return { term: "" };
+        return { topic: "" };
     }
 
+    // Handle user input 
     handleChange(event) {
-        this.setState({ term: event.target.value });
+        this.setState({ topic: event.target.value });
     }
 
+    // Handle user submission
     handleSubmit(event){
         // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
         // clicking the button
         event.preventDefault();
 
         // Set the parent to have the search term
-        this.props.setTerm(this.state.term);
-        this.setState({ term: "" });
+        this.props.setTerm(this.state.topic);
+        this.setState({ topic: "" });
     }
 
     // Here we render the component
@@ -42,10 +44,10 @@ class Search extends React.Component {
                     </div>
                     {/* Panel body & Beginning of form */}
                     <div className="panel-body">
-                        <form>
+                        <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
                                 <label htmlFor="topic">Topic</label>
-                                <input type="email" className="form-control" id="newsTopic" placeholder="Enter News Topic" />
+                                <input value={this.state.topic} type="email" className="form-control" id="newsTopic" placeholder="Enter News Topic" onChange={this.handleChange} />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="start-year">Start Year</label>
