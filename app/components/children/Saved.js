@@ -1,13 +1,20 @@
-// Include React
-var React = require("react");
+// Include React & Axios
+import React from ("react");
+import axios from ("axios");
+
+
 // Including the Link component from React Router to navigate within our application without full page reloads
 var Link = require("react-router").Link;
 
 // Create the Main component
-var Saved = React.createClass({
+class Saved extends React.Component {
+
+    getInitialState(){
+
+    }
 
     // Here we render the component
-    render: function () {
+    render() {
 
         return (
             <div className="container">
@@ -23,9 +30,9 @@ var Saved = React.createClass({
             </div> // Closes container
         );
     }
-});
+};
 
 
 
 // Export the component back for use in other files
-module.exports = Saved;
+export default Saved;

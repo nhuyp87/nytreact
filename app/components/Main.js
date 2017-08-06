@@ -1,11 +1,11 @@
-// Include React
-var React = require("react");
-// Including the Link component from React Router to navigate within our application without full page reloads
-var Link = require("react-router").Link;
+// Include React & Axios
+import React from ("react");
+import axios from ("axios");
 
-var Main = React.createClass({
+
+class Main extends React.Component{
   // Here we render the function
-  render: function() {
+  render() {
     return (
       <div className="container">
         <div className="jumbotron">
@@ -19,8 +19,8 @@ var Main = React.createClass({
       </div>
     );
   }
-});
+};
 // Export the component back for use in other files
-module.exports = Main;
+export default Main;
 
 

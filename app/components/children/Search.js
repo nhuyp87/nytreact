@@ -1,13 +1,37 @@
-// Include React
-var React = require("react");
+// Include React & Axios
+import React from ("react");
+import axios from ("axios");
+
+
 // Including the Link component from React Router to navigate within our application without full page reloads
 var Link = require("react-router").Link;
 
+
 // Create the Main component
-var Search = React.createClass({
+class Search extends React.Component {
+   
+  // Here we set a generic state associated with the text being searched for
+    getInitialState() {
+        return { term: "" };
+    }
+
+    handleChange(event) {
+        this.setState({ term: event.target.value });
+    }
+
+    handleSubmit(event){
+        // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
+        // clicking the button
+        event.preventDefault();
+
+        // Set the parent to have the search term
+        this.props.setTerm(this.state.term);
+        this.setState({ term: "" });
+    }
 
     // Here we render the component
-    render: function () {
+    render() {
+
 
         return (
             <div className="container">
@@ -38,7 +62,7 @@ var Search = React.createClass({
             </div> // Closes container
         );
     }
-});
+};
 
 // Export the component back for use in other files
-module.exports = Search;
+export default Search;
